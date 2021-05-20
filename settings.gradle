@@ -1,0 +1,2 @@
+rootProject.name = "CSI360Midterm"
+include ':app'
