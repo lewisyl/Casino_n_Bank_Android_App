@@ -46,7 +46,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="Points:" />
+                android:text="This Round PTs:" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="Total PTs:" />
 
             <TextView
                 android:id="@+id/textView19"
@@ -55,14 +63,6 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="Bet Amount:" />
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="Cash Balance:" />
 
             <TextView
                 android:id="@+id/textView20"
@@ -91,20 +91,20 @@
                 android:text="0" />
 
             <TextView
+                android:id="@+id/player2Balance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="0" />
+
+            <TextView
                 android:id="@+id/player2CashDown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="50" />
-
-            <TextView
-                android:id="@+id/player2Balance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="500" />
 
             <TextView
                 android:id="@+id/player2RollingChance"
@@ -263,7 +263,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="Points:" />
+                android:text="This Round PTs:" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="Total PTs:" />
 
             <TextView
                 android:id="@+id/textView15"
@@ -272,14 +280,6 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="Bet Amount:" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="Cash Balance:" />
 
             <TextView
                 android:id="@+id/textView12"
@@ -308,20 +308,20 @@
                 android:text="0" />
 
             <TextView
+                android:id="@+id/player1TotalPt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="0" />
+
+            <TextView
                 android:id="@+id/player1CashDown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="50" />
-
-            <TextView
-                android:id="@+id/player1Balance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="500" />
 
             <TextView
                 android:id="@+id/player1RollingChance"
