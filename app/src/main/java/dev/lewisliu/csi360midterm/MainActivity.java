@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     Button casinoBtn;
     Button bankBtn;
+    Account account;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void openCasino() {
+    private void openCasino() {
         Intent intent = new Intent(this, Casino.class);
         startActivity(intent);
     }

@@ -62,14 +62,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/author" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="adadasdasd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bankBtn" />
+    <LinearLayout
+        android:layout_width="379dp"
+        android:layout_height="212dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="503dp">
+
+        <TextView
+            android:id="@+id/bankNameLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bank: " />
+
+        <TextView
+            android:id="@+id/accountNumLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Account Number: " />
+
+        <TextView
+            android:id="@+id/accountBalanceLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current Balance: " />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
