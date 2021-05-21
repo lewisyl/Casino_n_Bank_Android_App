@@ -61,7 +61,7 @@ public class Casino extends AppCompatActivity {
 
         player2PassBtn.setEnabled(false);
         player2RollBtn.setEnabled(false);
-        player1Slot.setBackground(getResources().getDrawable(R.drawable.customborder));
+        player2Slot.setBackground(null);
 
         backHomeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -198,13 +198,13 @@ public class Casino extends AppCompatActivity {
     private void winningDialog(int player) {
         AlertDialog.Builder win = new AlertDialog.Builder(this);
         win.setTitle("The Winner is Player " + player + "!!")
-                .setMessage("Want to play again? Yes to continue, No to go back to Home.")
-                .setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
+                .setMessage("Do You Want To Play Again?")
+                .setPositiveButton("Heck Yeah! All In!", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         resetTabletop();
                     }
                 })
-                .setNegativeButton("Go Home", new DialogInterface.OnClickListener() {
+                .setNegativeButton("My Mom Asks Me To Go Home...", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         backHome();
@@ -215,13 +215,22 @@ public class Casino extends AppCompatActivity {
     }
 
     private void resetTabletop () {
-        player2PassBtn.setEnabled(false);
         player2RollBtn.setEnabled(false);
+        player2PassBtn.setEnabled(false);
+        player1RollBtn.setEnabled(true);
+        player1PassBtn.setEnabled(true);
         player1Slot.setBackground(getResources().getDrawable(R.drawable.customborder));
         player2Slot.setBackground(null);
 
         player1Total = 0;
         player2Total = 0;
         rollPoints = 0;
+
+        player1Points.setText("0");
+        player2Points.setText("0");
+        player1TotalPts.setText("0");
+        player2TotalPts.setText("0");
+        player1RollingChance.setText("3");
+        player2RollingChance.setText("3");
     }
 }
