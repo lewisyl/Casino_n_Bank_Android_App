@@ -8,7 +8,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
+        android:id="@+id/player2Slot"
         android:layout_width="180dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
@@ -91,7 +91,7 @@
                 android:text="0" />
 
             <TextView
-                android:id="@+id/player2Balance"
+                android:id="@+id/player2TotalPt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -127,12 +127,12 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
         <Button
-            android:id="@+id/player2Done"
+            android:id="@+id/player2Pass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Done"
+            android:text="Pass"
             app:backgroundTint="#8BC34A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -225,7 +225,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/player1Slot"
         android:layout_width="180dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -344,12 +344,12 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
         <Button
-            android:id="@+id/player1Done"
+            android:id="@+id/player1Pass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Done"
+            android:text="Pass"
             app:backgroundTint="#009688"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -362,12 +362,10 @@
         android:id="@+id/casinoBackHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
         android:text="Back Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

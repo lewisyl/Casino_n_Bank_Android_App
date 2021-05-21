@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CSI360Midterm</string>
+
+    <string-array name="bet_amount">
+
+    </string-array>
 </resources>
