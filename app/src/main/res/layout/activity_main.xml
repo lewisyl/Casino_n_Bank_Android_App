@@ -10,7 +10,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="32dp"
         android:text="Android Midtern Exam"
         android:textAllCaps="false"
         android:textSize="24sp"
@@ -63,30 +63,88 @@
         app:layout_constraintTop_toBottomOf="@+id/author" />
 
     <LinearLayout
-        android:layout_width="379dp"
-        android:layout_height="212dp"
+        android:id="@+id/infoLabels"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="503dp">
+        app:layout_constraintTop_toBottomOf="@+id/casinoBtn"
+        tools:layout_editor_absoluteX="51dp">
 
         <TextView
             android:id="@+id/bankNameLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:text="Bank: " />
 
         <TextView
             android:id="@+id/accountNumLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:text="Account Number: " />
 
         <TextView
             android:id="@+id/accountBalanceLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:text="Current Balance: " />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/infoData"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/infoLabels"
+        app:layout_constraintTop_toBottomOf="@+id/bankBtn">
+
+        <TextView
+            android:id="@+id/bankName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="Husky & Lab Bank" />
+
+        <TextView
+            android:id="@+id/accountNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="7777777" />
+
+        <TextView
+            android:id="@+id/accountBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="$10000" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/showAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="monospace"
+        android:text="No bank activity made yet."
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infoLabels" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
