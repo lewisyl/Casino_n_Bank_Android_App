@@ -88,8 +88,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="Wallet:" />
+                android:layout_marginBottom="10dp"
+                android:text="$$ in My Pocket:"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/maBankNameLabel"
@@ -113,7 +114,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="Account Balance: " />
+                android:text="Account Balance: "
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -136,8 +138,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="$" />
+                android:layout_marginBottom="10dp"
+                android:text="$"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/maBankName"
@@ -161,7 +164,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="$" />
+                android:text="$"
+                android:textStyle="bold" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

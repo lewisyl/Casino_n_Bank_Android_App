@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     TextView bankName;
     TextView accountNum;
     TextView balance;
-    TextView maWallet;
+    TextView wallet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         bankName = (TextView) findViewById(R.id.maBankName);
         accountNum = (TextView) findViewById(R.id.maAccountNum);
         balance = (TextView) findViewById(R.id.maAccountBalance);
-        maWallet = (TextView) findViewById(R.id.maWallet);
+        wallet = (TextView) findViewById(R.id.maWallet);
 
         if (getIntent().getSerializableExtra("MyFinance") == null || getIntent().getSerializableExtra("MyFinance") == null) {
             finance = new Finance(bankName.getText().toString(), accountNum.getText().toString());
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         balance.setText("$ " + finance.get_balance());
+        wallet.setText("$ " + finance.get_wallet());
 
         casinoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
