@@ -168,7 +168,7 @@ public class Casino extends AppCompatActivity {
         chance = 3;
         if (player == 1) {
             player1Total += rollPoints;
-            if (player1Total >= 20) {
+            if (player1Total >= 100) {
                 int currentWalletAmount = amountInPocket + 50;
                 finance.set_wallet(currentWalletAmount);
                 winningDialog(player, currentWalletAmount);
@@ -187,7 +187,7 @@ public class Casino extends AppCompatActivity {
             player2Slot.setBackground(getResources().getDrawable(R.drawable.customborder));
         } else if (player == 2){
             player2Total += rollPoints;
-            if (player2Total >= 20) {
+            if (player2Total >= 100) {
                 int currentWalletAmount = amountInPocket - 50;
                 finance.set_wallet(currentWalletAmount);
                 currentWalletAmount = getCurrentWallet();

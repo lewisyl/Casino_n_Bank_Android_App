@@ -16,8 +16,8 @@ public class Finance implements Serializable {
     public Finance(String _bankName, String _accountNum) {
         this._bankName = _bankName;
         this._accountNum = _accountNum;
-        this._balance = 50000;
-        this._wallet = 100;
+        this._balance = 5000;
+        this._wallet = 200;
     }
 
     public String get_bankName() {
