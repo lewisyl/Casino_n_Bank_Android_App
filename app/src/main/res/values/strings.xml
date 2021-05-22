@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CSI360Midterm</string>
+    <string name="app_name">Casino &amp; Bank</string>
 
     <string-array name="bet_amount">
         <item>50</item>

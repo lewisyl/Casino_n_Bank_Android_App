@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dev.lewisliu.csi360midterm">
+    package="dev.lewisliu.Casino_n_Bank_Android_App">
 
     <application
         android:allowBackup="true"
@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CSI360Midterm">
-        <activity android:name=".Bank"></activity>
-        <activity android:name=".Casino" />
-        <activity android:name=".MainActivity">
+        <activity android:name="dev.lewisliu.Casino_n_Bank_Android_App.Bank"></activity>
+        <activity android:name="dev.lewisliu.Casino_n_Bank_Android_App.Casino" />
+        <activity android:name="dev.lewisliu.Casino_n_Bank_Android_App.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

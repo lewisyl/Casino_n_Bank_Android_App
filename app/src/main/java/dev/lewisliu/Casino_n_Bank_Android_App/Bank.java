@@ -1,4 +1,4 @@
-package dev.lewisliu.csi360midterm;
+package dev.lewisliu.Casino_n_Bank_Android_App;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Hashtable;
 
 public class Bank extends AppCompatActivity {
     TextView bankName;
