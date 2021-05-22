@@ -12,15 +12,25 @@ public class Account implements Serializable {
         this._balance = _balance;
     }
 
-    public void withdraw(int amount) {
-        _balance -= amount;
+    public Account(String _bankName, String _accountNum) {
+        this._bankName = _bankName;
+        this._accountNum = _accountNum;
+        this._balance = 10000;
     }
 
-    public void deposit(int amount) {
-        _balance += amount;
+    public String get_bankName() {
+        return _bankName;
+    }
+
+    public String get_accountNum() {
+        return _accountNum;
     }
 
     public int get_balance() {
         return _balance;
+    }
+
+    public void set_balance(int _balance) {
+        this._balance = _balance;
     }
 }

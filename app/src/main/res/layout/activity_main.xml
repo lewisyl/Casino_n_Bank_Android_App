@@ -63,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/author" />
 
     <TextView
-        android:id="@+id/showAction"
+        android:id="@+id/maShowRecentAction"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
@@ -136,7 +136,7 @@
             app:layout_constraintVertical_bias="0.0">
 
             <TextView
-                android:id="@+id/bankName"
+                android:id="@+id/maBankName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -144,7 +144,7 @@
                 android:text="Husky&amp;Lab Bank" />
 
             <TextView
-                android:id="@+id/accountNum"
+                android:id="@+id/maAccountNum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -152,7 +152,7 @@
                 android:text="7777777" />
 
             <TextView
-                android:id="@+id/accountBalance"
+                android:id="@+id/maAccountBalance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"

@@ -199,12 +199,14 @@ public class Casino extends AppCompatActivity {
         AlertDialog.Builder win = new AlertDialog.Builder(this);
         win.setTitle("The Winner is Player " + player + "!!")
                 .setMessage("Do You Want To Play Again?")
-                .setPositiveButton("Heck Yeah! All In!", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Heck Yeah! All In!",
+                        new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         resetTabletop();
                     }
                 })
-                .setNegativeButton("My Mom Asks Me To Go Home...", new DialogInterface.OnClickListener() {
+                .setNegativeButton("My Mom Asks Me To Go Home...",
+                        new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         backHome();
