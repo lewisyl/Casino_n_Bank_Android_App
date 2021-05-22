@@ -13,6 +13,7 @@ public class Bank extends AppCompatActivity {
     TextView bankName;
     TextView accountNum;
     TextView currentBalance;
+    TextView wallet;
     EditText depositAmount;
     EditText withdrawAmount;
     Button deposit;
@@ -30,6 +31,7 @@ public class Bank extends AppCompatActivity {
         bankName = (TextView) findViewById(R.id.bkBankName);
         accountNum = (TextView) findViewById(R.id.bkAccountNum);
         currentBalance = (TextView) findViewById(R.id.bkBalance);
+        wallet = (TextView) findViewById(R.id.bkWallet);
         depositAmount = (EditText) findViewById(R.id.bkDepositAmount);
         withdrawAmount = (EditText) findViewById(R.id.bkWithdrawAmount);
         deposit = (Button) findViewById(R.id.bkDepositBtn);
@@ -39,10 +41,12 @@ public class Bank extends AppCompatActivity {
         finance = (Finance) getIntent().getSerializableExtra("MyFinance");
 
         int balance = finance.get_balance();
+        int moneyInPocket = finance.get_wallet();
 
         bankName.setText(finance.get_bankName());
         accountNum.setText(finance.get_accountNum());
         currentBalance.setText("$ " + balance);
+        wallet.setText("$ " + moneyInPocket);
 
 
         backHome.setOnClickListener(new View.OnClickListener() {

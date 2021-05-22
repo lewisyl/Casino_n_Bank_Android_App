@@ -1,7 +1,9 @@
 package dev.lewisliu.csi360midterm;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -54,8 +56,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openCasino() {
-        Intent intent = new Intent(this, Casino.class);
-        startActivity(intent);
+        if (finance.get_wallet() < 50) {
+            AlertDialog.Builder noMoney = new AlertDialog.Builder(this);
+            noMoney.setTitle("No $$, No Gambling!")
+                    .setMessage("You gotta have at least $50 in your pocket to enter the casino!")
+                    .setNegativeButton("Go Home", null)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+        }
+        else {
+            Intent intent = new Intent(this, Casino.class);
+            startActivity(intent.putExtra("MyFinance", finance));
+        }
     }
 
     private void openBank() {

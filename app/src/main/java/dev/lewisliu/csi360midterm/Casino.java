@@ -4,8 +4,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,8 +30,10 @@ public class Casino extends AppCompatActivity {
     TextView player2TotalPts;
     TextView player1RollingChance;
     TextView player2RollingChance;
+    TextView wallet;
     ConstraintLayout player1Slot;
     ConstraintLayout player2Slot;
+    Finance finance;
     int chance = 3;
     int player1Total, player2Total, rollPoints = 0;
 
@@ -58,6 +58,10 @@ public class Casino extends AppCompatActivity {
         player2TotalPts = (TextView) findViewById(R.id.player2TotalPt);
         player1RollingChance = (TextView) findViewById(R.id.player1RollingChance);
         player2RollingChance = (TextView) findViewById(R.id.player2RollingChance);
+        wallet = (TextView) findViewById(R.id.csnWallet);
+
+        finance = (Finance) getIntent().getSerializableExtra("MyFinance");
+        wallet.setText("$ " + getCurrentWallet());
 
         player2PassBtn.setEnabled(false);
         player2RollBtn.setEnabled(false);
@@ -74,7 +78,7 @@ public class Casino extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int player = 1;
-                rollDice(player);
+                rollDice(player, getCurrentWallet());
 
             }
         });
@@ -83,7 +87,7 @@ public class Casino extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int player = 2;
-                rollDice(player);
+                rollDice(player, getCurrentWallet());
             }
         });
 
@@ -91,8 +95,8 @@ public class Casino extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int player = 1;
-                switchPlayer(player, rollPoints);
-
+                switchPlayer(player, rollPoints, getCurrentWallet());
+                rollPoints = 0;
             }
         });
 
@@ -100,17 +104,18 @@ public class Casino extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int player = 2;
-                switchPlayer(player, rollPoints);
+                switchPlayer(player, rollPoints, getCurrentWallet());
+                rollPoints = 0;
             }
         });
     }
 
     private void backHome() {
         Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        startActivity(intent.putExtra("MyFinance", finance));
     }
 
-    private void rollDice(int player) {
+    private void rollDice(int player, int amountInPocket) {
         int randomDice1 = random.nextInt(6) + 1;
         int randomDice2 = random.nextInt(6) + 1;
         int randomDice3 = random.nextInt(6) + 1;
@@ -130,7 +135,10 @@ public class Casino extends AppCompatActivity {
             player2Points.setText(String.valueOf(rollPoints));
             player2RollingChance.setText(String.valueOf(chance));
         }
-        if (chance == 0) switchPlayer(player, rollPoints);
+        if (chance == 0) {
+            switchPlayer(player, rollPoints, amountInPocket);
+            rollPoints = 0;
+        }
     }
 
     private void selectDiceImg (int randomResult, ImageView diceImage) {
@@ -156,12 +164,14 @@ public class Casino extends AppCompatActivity {
         }
     }
 
-    private void switchPlayer(int player, int rollPoints) {
+    private void switchPlayer(int player, int rollPoints, int amountInPocket) {
         chance = 3;
         if (player == 1) {
             player1Total += rollPoints;
-            if (player1Total >= 100) {
-                winningDialog(player);
+            if (player1Total >= 20) {
+                int currentWalletAmount = amountInPocket + 50;
+                finance.set_wallet(currentWalletAmount);
+                winningDialog(player, currentWalletAmount);
                 return;
             }
             player1TotalPts.setText(String.valueOf(player1Total));
@@ -175,10 +185,17 @@ public class Casino extends AppCompatActivity {
 
             player1Slot.setBackground(null);
             player2Slot.setBackground(getResources().getDrawable(R.drawable.customborder));
-        } else {
+        } else if (player == 2){
             player2Total += rollPoints;
-            if (player2Total >= 100) {
-                winningDialog(player);
+            if (player2Total >= 20) {
+                int currentWalletAmount = amountInPocket - 50;
+                finance.set_wallet(currentWalletAmount);
+                currentWalletAmount = getCurrentWallet();
+                if (currentWalletAmount < 50) {
+                    noMoneyDialog();
+                } else {
+                    winningDialog(player, currentWalletAmount);
+                }
                 return;
             }
             player2TotalPts.setText(String.valueOf(player2Total));
@@ -195,14 +212,14 @@ public class Casino extends AppCompatActivity {
         }
     }
 
-    private void winningDialog(int player) {
+    private void winningDialog(int player, int amountInPocket) {
         AlertDialog.Builder win = new AlertDialog.Builder(this);
         win.setTitle("The Winner is Player " + player + "!!")
                 .setMessage("Do You Want To Play Again?")
-                .setPositiveButton("Heck Yeah! All In!",
+                .setPositiveButton("Heck Yeah! One More Round!",
                         new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        resetTabletop();
+                        resetTabletop(amountInPocket);
                     }
                 })
                 .setNegativeButton("My Mom Asks Me To Go Home...",
@@ -216,13 +233,30 @@ public class Casino extends AppCompatActivity {
                 .show();
     }
 
-    private void resetTabletop () {
+    private void noMoneyDialog() {
+        AlertDialog.Builder noMoney = new AlertDialog.Builder(this);
+        noMoney.setTitle("YOU LOST!")
+                .setMessage("Go Home! You've NO $$ in your pocket!")
+                .setNegativeButton("Go Home",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                backHome();
+                            }
+                        })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+    }
+
+    private void resetTabletop (int amountInPocket) {
         player2RollBtn.setEnabled(false);
         player2PassBtn.setEnabled(false);
         player1RollBtn.setEnabled(true);
         player1PassBtn.setEnabled(true);
         player1Slot.setBackground(getResources().getDrawable(R.drawable.customborder));
         player2Slot.setBackground(null);
+
+        wallet.setText("$ " + amountInPocket);
 
         player1Total = 0;
         player2Total = 0;
@@ -234,5 +268,9 @@ public class Casino extends AppCompatActivity {
         player2TotalPts.setText("0");
         player1RollingChance.setText("3");
         player2RollingChance.setText("3");
+    }
+
+    private int getCurrentWallet() {
+        return finance.get_wallet();
     }
 }
