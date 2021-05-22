@@ -160,7 +160,7 @@ public class Casino extends AppCompatActivity {
         chance = 3;
         if (player == 1) {
             player1Total += rollPoints;
-            if (player1Total >= 20) {
+            if (player1Total >= 100) {
                 winningDialog(player);
                 return;
             }
@@ -177,7 +177,7 @@ public class Casino extends AppCompatActivity {
             player2Slot.setBackground(getResources().getDrawable(R.drawable.customborder));
         } else {
             player2Total += rollPoints;
-            if (player2Total >= 20) {
+            if (player2Total >= 100) {
                 winningDialog(player);
                 return;
             }
