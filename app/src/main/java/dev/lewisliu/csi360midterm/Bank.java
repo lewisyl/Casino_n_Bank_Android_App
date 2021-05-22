@@ -18,7 +18,7 @@ public class Bank extends AppCompatActivity {
     Button deposit;
     Button withdraw;
     Button backHome;
-    Account account;
+    Finance finance;
 
 
 
@@ -36,12 +36,12 @@ public class Bank extends AppCompatActivity {
         withdraw = (Button) findViewById(R.id.bkWithdrawBtn);
         backHome = (Button) findViewById(R.id.bkBackHome);
 
-        account = (Account) getIntent().getSerializableExtra("MyAccount");
+        finance = (Finance) getIntent().getSerializableExtra("MyFinance");
 
-        int balance = account.get_balance();
+        int balance = finance.get_balance();
 
-        bankName.setText(account.get_bankName());
-        accountNum.setText(account.get_accountNum());
+        bankName.setText(finance.get_bankName());
+        accountNum.setText(finance.get_accountNum());
         currentBalance.setText("$ " + balance);
 
 
@@ -49,7 +49,7 @@ public class Bank extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int newB = balance + 888;
-                account.set_balance(newB);
+                finance.set_balance(newB);
                 backHome();
             }
         });
@@ -57,7 +57,7 @@ public class Bank extends AppCompatActivity {
     }
     private void backHome() {
         Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent.putExtra("MyAccount", account));
+        startActivity(intent.putExtra("MyFinance", finance));
     }
 
 }

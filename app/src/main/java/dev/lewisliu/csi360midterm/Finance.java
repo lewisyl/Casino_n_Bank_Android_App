@@ -2,20 +2,22 @@ package dev.lewisliu.csi360midterm;
 
 import java.io.Serializable;
 
-public class Account implements Serializable {
+public class Finance implements Serializable {
     private String _bankName, _accountNum;
-    private int _balance;
+    private int _balance, _wallet;
 
-    public Account(String _bankName, String _accountNum, int _balance) {
+    public Finance(String _bankName, String _accountNum, int _balance, int _wallet) {
         this._bankName = _bankName;
         this._accountNum = _accountNum;
         this._balance = _balance;
+        this._wallet = _wallet;
     }
 
-    public Account(String _bankName, String _accountNum) {
+    public Finance(String _bankName, String _accountNum) {
         this._bankName = _bankName;
         this._accountNum = _accountNum;
-        this._balance = 10000;
+        this._balance = 678678;
+        this._balance = 1000;
     }
 
     public String get_bankName() {
@@ -32,5 +34,13 @@ public class Account implements Serializable {
 
     public void set_balance(int _balance) {
         this._balance = _balance;
+    }
+
+    public int get_wallet() {
+        return _wallet;
+    }
+
+    public void set_wallet(int _wallet) {
+        this._wallet = _wallet;
     }
 }

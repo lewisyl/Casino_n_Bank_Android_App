@@ -11,11 +11,11 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     Button casinoBtn;
     Button bankBtn;
-    Account account;
+    Finance finance;
     TextView bankName;
     TextView accountNum;
     TextView balance;
-    TextView showRecentAction;
+    TextView maWallet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +27,15 @@ public class MainActivity extends AppCompatActivity {
         bankName = (TextView) findViewById(R.id.maBankName);
         accountNum = (TextView) findViewById(R.id.maAccountNum);
         balance = (TextView) findViewById(R.id.maAccountBalance);
-        showRecentAction = (TextView) findViewById(R.id.maShowRecentAction);
+        maWallet = (TextView) findViewById(R.id.maWallet);
 
-        if (getIntent().getSerializableExtra("MyAccount") == null) {
-            account = new Account(bankName.getText().toString(), accountNum.getText().toString());
+        if (getIntent().getSerializableExtra("MyFinance") == null || getIntent().getSerializableExtra("MyFinance") == null) {
+            finance = new Finance(bankName.getText().toString(), accountNum.getText().toString());
         } else {
-            account = (Account) getIntent().getSerializableExtra("MyAccount");
+            finance = (Finance) getIntent().getSerializableExtra("MyFinance");
         }
 
-        balance.setText("$ " + account.get_balance());
+        balance.setText("$ " + finance.get_balance());
 
         casinoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void openBank() {
         Intent intent = new Intent(this, Bank.class);
-        startActivity(intent.putExtra("MyAccount", account));
+        startActivity(intent.putExtra("MyFinance", finance));
     }
 }
