@@ -5,17 +5,17 @@ User can go to the Casino, play dice rolling game, or go to the Bank for deposit
 
 > User's data is just a class called Finance, not connecting to any DB. 
 
-## Main Activity
+### Main Activity
 - Bank Name and Account Number are hard coded and can't be changed. But they are read and set into Finance class.
 - By default, ***$$ in My Pocket*** and ***Account Balance*** don't have any amount shown behind, just the dollar sign($). 
 The data shown was read from the Finance class.
 - ***$$ in My Pocket*** and ***Account Balance*** will automatically update if user wins/loses money in Casino, or deposits/withdraws money in Bank.
 - On launching the app, user is given $200 cash in wallet and $5000 balance in bank account by default.
 - User can choose to go to Casino or Bank by clicking Buttons.
-- ***Validation for entering Casino*** 
-    - User will NOT be able to enter the Casino if the money in my pocket is less than **$50** since minimum bet is $50.
+- ***Validation:*** 
+    - User will NOT be able to enter the Casino if the money in my pocket is **less than $50** since minimum bet is $50.
 
-## Casino
+### Casino
 - User is Player 1 (YOU)
 - Each player is allowed to throw 3 dice at a roll
 - Each game you bet **$50**
@@ -28,15 +28,15 @@ to the total points of the player
 pocket
 - You can choose continue or not after each game
 - If you choose continue, game table will be reset
-- ***Validation***
+- ***Validation:***
     - If there are **less than $50** in your pocket, you will be automatically kicked out from the casino
 
-## Bank
+### Bank
 - Bank will sync user's current remaining money in the pocket(wallet) while entering
 - User can deposit or withdraw money
-- ***Validation***
+- ***Validation:***
     - Deposit and Withdraw amount can NOT be:
-        - empty
+        - Empty
         - Zero(0)
         - Negative number
     - Deposit amount can NOT be greater than the remaining cash amount in your pocket
