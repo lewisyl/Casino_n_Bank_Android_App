@@ -28,6 +28,16 @@ to the total points of the player
 pocket
 - You can choose continue or not after each game
 - If you choose continue, game table will be reset
-- If there are **less than $50** in your pocket, you will be automatically kicked out from the casino
+- ***Validation***
+    - If there are **less than $50** in your pocket, you will be automatically kicked out from the casino
 
 ## Bank
+- Bank will sync user's current remaining money in the pocket(wallet) while entering
+- User can deposit or withdraw money
+- ***Validation***
+    - Deposit and Withdraw amount can NOT be:
+        - empty
+        - Zero(0)
+        - Negative number
+    - Deposit amount can NOT be greater than the remaining cash amount in your pocket
+    - Withdraw amount can NOT be greater than the balance you have in your account
